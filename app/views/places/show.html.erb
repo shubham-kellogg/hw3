@@ -1,2 +1,11 @@
-<h1>Places#show</h1>
-<p>Find me in app/views/places/show.html.erb</p>
+<h1><%= @place.name %></h1>
+<% @place.entries.each do |entry| %>
+  <div>
+    <p><%= entry.title %></p>
+    <p><%= entry.description %></p>
+    <p><%= entry.posted_on %></p>
+  </div>
+<% end %>
+<div>
+  <%= link_to 'New Entry', new_place_entry_path(@place) %>
+</div>
